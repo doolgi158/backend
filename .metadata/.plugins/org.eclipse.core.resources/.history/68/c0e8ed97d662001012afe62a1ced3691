@@ -1,0 +1,9 @@
+package example;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+//웹에서 클래스를 접근하기 위해서는 반드시 패키지 설정이 선행되어야 한다.
+public class Clock { 
+
+
+} 
