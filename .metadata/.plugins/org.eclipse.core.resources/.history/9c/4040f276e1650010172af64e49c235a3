@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="result"></div>
+	
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script>
+		$.ajax({
+			url: '/firstExample/ajax/json/book.json',
+			method: 'get',
+			dataType: 'json'
+		}).done(function(json){
+			let book = json.book;
+			$(book).each(function(){
+				let title = this.title;
+				let writer = this.writer;
+				let publicer = this.publicer;
+				let date = this.date;
+				let price = this.price;
+				
+				let ul = $("<ul>");
+				let li1 = $("<li>").html("제목 : " + title);
+				let li2 = $("<li>").html("저자 : " + writer);
+				let li3 = $("<li>").html("출판사 : " + publicer);
+				let li4 = $("<li>").html("출판일 : " + date);
+				let li5 = $("<li>").html("가격 : " + price);
+				
+				ul.append(li1).append(li2).append(li3).append(li4).append(li5);
+				
+				$("#result").append(ul + "<hr />");
+			}).fail(function(xhr, status){
+				$("#result").append(status + " (HTTP-" + xhr.status + ")");
+			});
+		});
+	</script>
+</body>
+</html>

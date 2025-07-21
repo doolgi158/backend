@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="result"></div>
+	
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	
+	<script>
+		$.ajax({
+			url: '/firstExample/ajax/xml/book.xml',
+			method: 'get',
+			dataType: 'xml'
+		}).done(function(data){
+			$(data).find("best").each(function(){
+				let title = $(this).find("title").text();
+				let writer = $(this).find("writer").text();
+				let publicer = $(this).find("publicer").text();
+				let date = $(this).find("date").text();
+				let price = $(this).find("price").text();
+				  
+				let p1 = $("<p>").html("제목 : " + title);
+				let p2 = $("<p>").html("저자 : " + writer);   
+				let p3 = $("<p>").html("출판사 : " + publicer);
+				let p4 = $("<p>").html("출판일 : " + date);
+				let p5 = $("<p>").html("가격 : " + price);		
+				
+								
+				$("#result").append(p1).append(p2).append(p3).append(p4).append(p5);
+				$("#result").append("<hr />");
+			})
+		}).fail(function(xhr, textStatus){
+			$("#result").html(textStatus + " (HTTP-" + xhr.status + ")");
+		});
+		
+		$.get('/firstExample/ajax/xml/book.xml', function(data){
+			$(data).find("best").each(function(){
+				let title = $(this).find("title").text();
+				let writer = $(this).find("writer").text();
+				let publicer = $(this).find("publicer").text();
+				let date = $(this).find("date").text();
+				let price = $(this).find("price").text();
+				  
+				let p1 = $("<p>").html("제목 : " + title);
+				let p2 = $("<p>").html("저자 : " + writer);   
+				let p3 = $("<p>").html("출판사 : " + publicer);
+				let p4 = $("<p>").html("출판일 : " + date);
+				let p5 = $("<p>").html("가격 : " + price);		
+				
+								
+				$("#result").append(p1).append(p2).append(p3).append(p4).append(p5);
+				$("#result").append("<hr />");
+		}).fail(function(xhr, textStatus){
+			$("#result").html(textStatus + " (HTTP-" + xhr.status + ")");
+		});
+	</script>
+</body>
+</html>

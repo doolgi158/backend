@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+	<link href="../image/icon.png" rel="icon" type="image/x-icon" />
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<style>
+		#item-template{
+			display: none;
+		}
+		#map{
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+<h3 class="text-center mb-2">한국 농어촌공사에서 제공하는 계절 테마여행 세부 코스 정보</h3>
+<div class="container mb-3">
+	<div class="p-5 text-center bg-body-tertiary rounded-3">
+		<div id="map"></div>
+	</div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="col">
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+  </div>
+</div>
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6da5c23351dc2ddf31cd344fa6c82423"></script>
+</body>
+</html>
