@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="result"></div>
+	
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	
+	<script>
+		$.ajax({
+			url: 'firstExample/ajax/xml/book.xml',
+			method: 'get',
+			dataType: 'xml'
+		}).done(function(data){
+			let title = $(data).find("title").text();
+			let writer = $(data).find("writer").text();
+			let publicer = $(data).find("publicer").text();
+			let date = $(data).find("date").text();
+			let price = $(data).find("price").text();
+			
+			let div = $("<div>");
+			let p1 = $("<p>").html(title);
+			let p2 = $("<p>").html(writer);
+			let p3 = $("<p>").html(publicer);
+			let p4 = $("<p>").html(date);
+			let p5 = $("<p>").html(price);
+			
+			div.append(p1).append(p2).append(p3).append(p4).append(p5);
+			
+			$("#result").html(div);
+		}).fail(fuction(xhr, textStatus){
+			$("#result").html(textStatus + " HTTP-(" xhr.status + ")");
+		});
+	</script>
+</body>
+</html>

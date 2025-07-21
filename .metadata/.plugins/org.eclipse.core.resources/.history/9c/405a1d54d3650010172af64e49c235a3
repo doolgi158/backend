@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+	<best>
+		<title>혼모노</title>
+		<writer>성해나</writer>
+		<puplicer>창비</puplicer>
+		<date>2025.03.28</date>
+		<price>16,200원</price>
+	</best>
+	<best>
+		<title>가공범</title>
+		<writer>히가시노 게이고</writer>
+		<puplicer>북다</puplicer>
+		<date>2025.07.21</date>
+		<price>19,800원</price>
+	</best>
+		<title>조종당하는 인간</title>
+		<writer>김석재</writer>
+		<puplicer>스노우폭스북스P</puplicer>
+		<date>2025.07.16</date>
+		<price>16,650원</price>
+</book>
